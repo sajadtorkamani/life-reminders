@@ -26,7 +26,7 @@ RSpec.describe 'Create note', type: :feature do
       login
       visit new_note_path
 
-      find('trix-editor').click.set('We all die.')
+      fill_in_trix_editor 'We all die.'
       submit_form
 
       expect(page).to have_current_path root_path

@@ -104,6 +104,9 @@ GEM
       activesupport (>= 5.0)
     i18n (1.10.0)
       concurrent-ruby (~> 1.0)
+    importmap-rails (1.0.3)
+      actionpack (>= 6.0.0)
+      railties (>= 6.0.0)
     io-console (0.5.11)
     irb (1.4.1)
       reline (>= 0.3.0)
@@ -268,6 +271,7 @@ DEPENDENCIES
   debug
   factory_bot_rails
   faker
+  importmap-rails (~> 1.0)
   jbuilder
   pg (~> 1.1)
   puma (~> 5.0)

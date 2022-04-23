@@ -7,6 +7,7 @@ ruby '3.1.1'
 
 gem 'bootsnap', require: false
 gem 'dartsass-rails', '~> 0.3.0'
+gem 'importmap-rails', '~> 1.0'
 gem 'jbuilder'
 gem 'pg', '~> 1.1'
 gem 'puma', '~> 5.0'
@@ -37,4 +38,3 @@ group :test do
   gem 'shoulda-matchers', '~> 5.0'
   gem 'webdrivers'
 end
-

@@ -3,9 +3,8 @@
 require 'rails_helper'
 
 RSpec.describe 'Logout', type: :feature do
-  let(:user) { create(:user) }
-
   it 'user can logout successfully' do
+    user = create(:user)
     login_as(user)
 
     visit root_path

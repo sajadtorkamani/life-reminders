@@ -26,6 +26,7 @@ group :development do
   gem 'rubocop', require: false
   gem 'rubocop-rails', require: false
   gem 'rubocop-rspec', require: false
+  gem 'rspec-rails', '~> 5.1', '>= 5.1.1'
   gem 'web-console'
 end
 

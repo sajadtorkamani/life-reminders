@@ -6,9 +6,8 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '3.1.1'
 
 gem 'bootsnap', require: false
-gem 'cssbundling-rails'
+gem 'dartsass-rails', '~> 0.3.0'
 gem 'jbuilder'
-gem 'jsbundling-rails'
 gem 'pg', '~> 1.1'
 gem 'puma', '~> 5.0'
 gem 'rails', '~> 7.0.2', '>= 7.0.2.3'
@@ -38,3 +37,4 @@ group :test do
   gem 'shoulda-matchers', '~> 5.0'
   gem 'webdrivers'
 end
+

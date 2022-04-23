@@ -4,7 +4,7 @@ require 'rails_helper'
 
 RSpec.describe 'Registration', type: :feature do
   describe 'when form input is invalid' do
-    it 'Register form validates user input' do
+    it 'error messages are shown' do
       visit new_user_registration_path
 
       submit_form
@@ -21,7 +21,7 @@ RSpec.describe 'Registration', type: :feature do
   end
 
   describe 'when form input is valid' do
-    it 'User is registered' do
+    it 'user is registered' do
       attributes = attributes_for(:user, email: 'john@example.com')
       visit new_user_registration_path
 

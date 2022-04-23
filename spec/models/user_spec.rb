@@ -7,6 +7,10 @@ RSpec.describe User, type: :model do
     expect(build(:user)).to be_valid
   end
 
+  describe 'associations' do
+    it { is_expected.to have_many(:notes).dependent(:destroy) }
+  end
+
   describe 'validations' do
     # Email
     it { is_expected.to validate_presence_of(:email) }

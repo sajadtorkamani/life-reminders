@@ -4,6 +4,6 @@ def default_form_error_message
   I18n.t('simple_form.error_notification.default_message')
 end
 
-def invalid_credentials_message
-  
+def unauthenticated_message
+  I18n.t('devise.failure.unauthenticated')
 end

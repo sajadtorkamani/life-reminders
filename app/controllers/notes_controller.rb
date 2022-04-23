@@ -2,7 +2,7 @@
 
 class NotesController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_note, only: %i[edit update]
+  before_action :set_note, only: %i[edit update destroy]
 
   # GET /notes
   def index
@@ -27,15 +27,24 @@ class NotesController < ApplicationController
   end
 
   # GET /notes/:id/edit
-  def edit; end
+  def edit
+    authorize @note
+  end
 
   # PUT /notes/:id
   def update
+    authorize @note
+
     if @note.update(note_params)
       redirect_to notes_path, notice: t('notices.notes.updated')
     else
       render :edit, status: :unprocessable_entity
     end
+  end
+
+  # DELETE /notes/:id
+  def destroy
+    authorize @note
   end
 
   private

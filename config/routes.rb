@@ -5,5 +5,5 @@ Rails.application.routes.draw do
 
   devise_for :users
 
-  resources :notes, only: %i[index edit update new create]
+  resources :notes, except: :show
 end

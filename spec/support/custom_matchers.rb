@@ -22,3 +22,21 @@ RSpec::Matchers.define :appear_before do |later_content|
     page.body.index(earlier_content) < page.body.index(later_content)
   end
 end
+
+RSpec::Matchers.define :raise_unauthorized_error do
+  match do |given_proc|
+    begin
+      given_proc.call
+    rescue Pundit::NotAuthorizedError
+      return true
+    end
+
+    false
+  end
+
+  supports_block_expectations
+
+  failure_message do
+    'expected Pundit::NotAuthorizedError but nothing was raised'
+  end
+end

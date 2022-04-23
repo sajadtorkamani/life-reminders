@@ -11,6 +11,7 @@ Selenium::WebDriver.logger.ignore(:browser_options)
 abort('The Rails environment is running in production mode!') if Rails.env.production?
 
 require 'rspec/rails'
+require 'pundit/rspec'
 
 Dir[Rails.root.join('spec', 'support', '**', '*.rb')].each { |f| require f }
 

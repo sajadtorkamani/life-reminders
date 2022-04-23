@@ -1,7 +1,7 @@
-<% if notice %>
-  <p class="notice"><%= notice %></p>
-<% end %>
+<% if notice or alert %>
+  <% alert_class = notice ? "alert-success" : "alert-danger" %>
 
-<% if alert %>
-  <p class="alert"><%= alert %></p>
+  <div class="alert <%= alert_class %> text-center">
+    <p class="mb-0"><%= notice || alert %></p>
+  </div>
 <% end %>

@@ -1,0 +1,60 @@
+require:
+  - rubocop-rails
+  - rubocop-rspec
+
+AllCops:
+  NewCops: enable
+
+Layout/LineLength:
+  Exclude:
+    - config/initializers/**/*.rb
+
+Layout/FirstHashElementIndentation:
+  EnforcedStyle: consistent
+
+Metrics/BlockLength:
+  Exclude:
+    - spec/**/*
+    - config/**/*.rb
+
+Metrics/AbcSize:
+  Exclude:
+    - db/migrate/**/*
+
+Metrics/MethodLength:
+  Exclude:
+    - db/migrate/**/*
+
+Rails/DynamicFindBy:
+  Enabled: false
+
+Rails/FilePath:
+  Enabled: false
+
+Rails/Output:
+  Exclude:
+    - lib/tasks/**/*
+
+RSpec/ExampleLength:
+  Enabled: false
+
+RSpec/MultipleExpectations:
+  Enabled: false
+
+RSpec/RepeatedDescription:
+  Exclude:
+    - spec/policies/**/
+
+RSpec/RepeatedExample:
+  Exclude:
+    - spec/policies/**/
+
+Style/ClassAndModuleChildren:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+Style/BlockDelimiters:
+  Exclude:
+    - spec/**/*

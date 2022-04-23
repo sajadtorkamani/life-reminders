@@ -8,6 +8,6 @@ def unauthenticated_message
   I18n.t('devise.failure.unauthenticated')
 end
 
-def fill_in_trix_editor(content)
-  find('trix-editor').click.set(content)
+def fill_in_trix_editor(id, with:)
+  find(:css, "##{id}").click.set(with)
 end

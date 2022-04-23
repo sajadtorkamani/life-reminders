@@ -4,4 +4,9 @@
       <%= note.content %>
     </div>
   </div>
+
+  <div class="card-footer">
+    <%= link_to 'Edit', edit_note_path(note),
+      class: "btn btn-sm btn-outline-primary me-1" %>
+  </div>
 </div>

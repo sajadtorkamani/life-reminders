@@ -1,20 +1,21 @@
-<h2>Log in</h2>
+<div class="container--small header-margin">
+  <%= render partial: 'shared/page_title', locals: { text: 'Login' } %>
 
-<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="form-inputs">
+  <%= simple_form_for(resource, as: resource_name,
+    url: session_path(resource_name),
+    html: { 'data-turbo': false }
+      ) do |f| %>
     <%= f.input :email,
-                required: false,
-                autofocus: true,
-                input_html: { autocomplete: "email" } %>
+      required: false,
+      autofocus: true,
+      input_html: { autocomplete: "email" } %>
     <%= f.input :password,
-                required: false,
-                input_html: { autocomplete: "current-password" } %>
+      required: false,
+      input_html: { autocomplete: "current-password" } %>
     <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
-  </div>
 
-  <div class="form-actions">
     <%= f.button :submit, "Log in" %>
-  </div>
-<% end %>
+  <% end %>
 
-<%= render "devise/shared/links" %>
+  <%= render "devise/shared/links" %>
+</div>

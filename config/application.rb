@@ -24,5 +24,7 @@ module LifeReminders
     config.generators do |g|
       g.helper false
     end
+
+    config.app_name = 'Life Reminders'
   end
 end

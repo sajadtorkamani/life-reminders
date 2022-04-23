@@ -1,6 +1,8 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container--small">
-    <%= link_to Rails.configuration.app_name, root_path, class: 'navbar-brand' %>
+    <%= link_to Rails.configuration.app_name,
+      user_signed_in? ? notes_path : root_path,
+      class: 'navbar-brand' %>
 
     <button
       class="navbar-toggler"

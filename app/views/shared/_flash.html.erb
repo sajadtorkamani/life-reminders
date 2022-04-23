@@ -1,7 +1,15 @@
 <% if notice or alert %>
   <% alert_class = notice ? "alert-success" : "alert-danger" %>
 
-  <div class="alert <%= alert_class %> text-center">
-    <p class="mb-0"><%= notice || alert %></p>
+  <div
+    class="alert alert-dismissible fade show <%= alert_class %> text-center"
+    role="alert"
+  >
+    <div class="container--small position-relative">
+      <p class="mb-0"><%= notice || alert %></p>
+      <button type="button" class="btn-close py-0" data-bs-dismiss="alert"
+              aria-label="Close" style="top: 3px;"
+      ></button>
+    </div>
   </div>
 <% end %>

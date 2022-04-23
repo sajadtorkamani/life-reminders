@@ -2,7 +2,11 @@
 
 class HomeController < ApplicationController
   # GET /
-  def guest
+  def index
+    if user_signed_in?
+      return redirect_to notes_path
+    end
 
+    render :index
   end
 end

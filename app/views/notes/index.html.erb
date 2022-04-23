@@ -1,0 +1,12 @@
+<div class="container--small header-margin">
+  <%= render partial: 'shared/page_title', locals: { text: 'Notes' } %>
+
+  <% if @notes.any? %>
+    <%= render @notes %>
+  <% else %>
+    <p>You have no notes.</p>
+
+    <%= link_to 'Create your first note', new_note_path,
+      class: 'btn btn-primary' %>
+  <% end %>
+</div>

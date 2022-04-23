@@ -29,7 +29,7 @@ RSpec.describe 'Create note', type: :feature do
       fill_in_trix_editor 'We all die.'
       submit_form
 
-      expect(page).to have_current_path root_path
+      expect(page).to have_current_path notes_path
       expect(page).to have_text I18n.t('notices.notes.created')
     end
   end

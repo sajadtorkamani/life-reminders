@@ -15,3 +15,10 @@ RSpec::Matchers.define :require_authentication do
     MSG
   end
 end
+
+# https://stackoverflow.com/a/14769902/2302835
+RSpec::Matchers.define :appear_before do |later_content|
+  match do |earlier_content|
+    page.body.index(earlier_content) < page.body.index(later_content)
+  end
+end

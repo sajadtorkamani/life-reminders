@@ -25,6 +25,6 @@ module LifeReminders
       g.helper false
     end
 
-    config.app_name = 'Life Reminders'
+    config.app_name = 'Life reminders'
   end
 end

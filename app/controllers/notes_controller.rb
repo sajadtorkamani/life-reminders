@@ -3,11 +3,17 @@
 class NotesController < ApplicationController
   before_action :authenticate_user!
 
+  # GET /notes
+  def index
+    @notes = Note.where(user: current_user).order(created_at: :desc)
+  end
+
   # GET /notes/new
   def new
     @note = Note.new
   end
 
+  # POST /notes
   def create
     @note = Note.new(note_params)
     @note.user = current_user

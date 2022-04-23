@@ -3,9 +3,15 @@
 require 'rails_helper'
 
 RSpec.describe 'Login', type: :feature do
+  it 'login page is only accessible to guests' do
+    login
+    visit_page
+    expect(page).to have_text I18n.t('devise.failure.already_authenticated')
+  end
+
   describe 'when credentials are invalid' do
     it 'error message is shown' do
-      visit new_user_session_path
+      visit_page
 
       submit_form
 
@@ -16,7 +22,7 @@ RSpec.describe 'Login', type: :feature do
   describe 'when credentials are valid' do
     it 'user is logged in' do
       user = create(:user)
-      visit new_user_session_path
+      visit_page
 
       fill_in 'Email', with: user.email
       fill_in 'Password', with: user.password
@@ -24,8 +30,12 @@ RSpec.describe 'Login', type: :feature do
 
       expect(page).to have_text login_success_message
       expect(page).to have_text user.truncated_email
-      expect(page).to have_current_path root_path
+      expect(page).to have_current_path notes_path
     end
+  end
+
+  def visit_page
+    visit new_user_session_path
   end
 
   def submit_form

@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  root 'home#guest'
+  root 'home#index'
 
   devise_for :users
 
-  resources :notes, only: %i[new create]
+  resources :notes, only: %i[index new create]
 end

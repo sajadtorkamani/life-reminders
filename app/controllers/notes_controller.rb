@@ -27,8 +27,7 @@ class NotesController < ApplicationController
   end
 
   # GET /notes/:id/edit
-  def edit
-  end
+  def edit; end
 
   # PUT /notes/:id
   def update
@@ -49,4 +48,3 @@ class NotesController < ApplicationController
     params.require(:note).permit(:content)
   end
 end
-

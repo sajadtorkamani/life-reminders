@@ -36,4 +36,3 @@ RSpec.describe 'Notes index page', type: :feature do
     visit notes_path
   end
 end
-

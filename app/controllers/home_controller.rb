@@ -3,9 +3,7 @@
 class HomeController < ApplicationController
   # GET /
   def index
-    if user_signed_in?
-      return redirect_to notes_path
-    end
+    return redirect_to notes_path if user_signed_in?
 
     render :index
   end

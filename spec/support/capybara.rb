@@ -2,7 +2,7 @@
 
 # frozen_string_literal: true
 
-RSpec.configure do |config|
+RSpec.configure do |_config|
   Capybara.javascript_driver = :selenium_chrome_headless
 
   # config.before(:each, js: true) do

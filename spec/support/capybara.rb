@@ -2,12 +2,13 @@
 
 # frozen_string_literal: true
 
-RSpec.configure do |_config|
+RSpec.configure do
   Capybara.javascript_driver = :selenium_chrome_headless
+end
 
-  # config.before(:each, js: true) do
-  #   Capybara.page.current_window.resize_to(1366, 768)
-  # end
+# https://github.com/rspec/rspec-rails/issues/1897
+Capybara.configure do |config|
+  config.server = :puma, { Silent: true }
 end
 
 def pause

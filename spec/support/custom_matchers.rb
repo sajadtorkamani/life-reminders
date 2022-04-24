@@ -18,13 +18,6 @@ RSpec::Matchers.define :require_authentication do
   end
 end
 
-# https://stackoverflow.com/a/14769902/2302835
-RSpec::Matchers.define :appear_before do |later_content|
-  match do |earlier_content|
-    page.body.index(earlier_content) < page.body.index(later_content)
-  end
-end
-
 RSpec::Matchers.define :raise_unauthorized_error do
   match do |given_proc|
     begin
@@ -40,5 +33,12 @@ RSpec::Matchers.define :raise_unauthorized_error do
 
   failure_message do
     'expected Pundit::NotAuthorizedError but nothing was raised'
+  end
+end
+
+# https://stackoverflow.com/a/14769902/2302835
+RSpec::Matchers.define :appear_before do |later_content|
+  match do |earlier_content|
+    page.body.index(earlier_content) < page.body.index(later_content)
   end
 end

@@ -3,3 +3,4 @@ en:
     notes:
       created: "Note created."
       updated: "Note updated."
+      deleted: "Note deleted."

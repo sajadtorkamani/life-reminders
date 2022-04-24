@@ -45,6 +45,9 @@ class NotesController < ApplicationController
   # DELETE /notes/:id
   def destroy
     authorize @note
+    @note.destroy!
+
+    redirect_to notes_path, notice: t('notices.notes.deleted'), status: :see_other
   end
 
   private

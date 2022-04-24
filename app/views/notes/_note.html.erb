@@ -7,6 +7,10 @@
 
   <div class="card-footer">
     <%= link_to 'Edit', edit_note_path(note),
-      class: "btn btn-sm btn-outline-primary me-1" %>
+      class: 'btn btn-sm btn-outline-primary me-1' %>
+
+    <%= link_to 'Delete', note_path(note),
+      class: 'btn btn-sm btn-outline-danger',
+      data: { 'turbo-method': :delete, 'turbo-confirm': 'Are you sure?' } %>
   </div>
 </div>

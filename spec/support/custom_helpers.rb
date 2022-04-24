@@ -11,3 +11,7 @@ end
 def fill_in_trix_editor(id, with:)
   find(:css, "##{id}").click.set(with)
 end
+
+def click_and_confirm(text)
+  accept_confirm { click_on(text) }
+end

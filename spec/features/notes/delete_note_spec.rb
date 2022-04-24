@@ -11,4 +11,15 @@ RSpec.describe 'Delete note', type: :feature do
 
     expect { delete note_path(bob_note) }.to raise_unauthorized_error
   end
+
+  it 'users can delete their notes', :js do
+    user = create(:user)
+    create(:note, user:)
+
+    login_as(user)
+    visit notes_path
+
+    click_and_confirm 'Delete'
+    expect(page).to have_text I18n.t('notices.notes.deleted')
+  end
 end

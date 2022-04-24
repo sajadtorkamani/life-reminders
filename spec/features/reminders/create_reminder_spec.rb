@@ -30,7 +30,7 @@ RSpec.describe 'Create reminder', type: :feature do
     end
   end
 
-  describe "when the default form values aren't changed" do
+  describe 'when form is submitted with the default values' do
     it 'reminder is created' do
       login
       visit_page
@@ -39,16 +39,14 @@ RSpec.describe 'Create reminder', type: :feature do
 
       expect(page).to have_current_path reminders_path
       expect(page).to have_text t('notices.reminders.created')
-      expect(Reminder.last.attributes.with_indifferent_access).to match(
-        hash_including({
-          name: Reminder::DEFAULT_NAME,
-          number_of_notes: Reminder::DEFAULT_NUMBER_OF_NOTES
-        })
-      )
+      expect(Reminder.last).to have_attributes({
+        name: Reminder::DEFAULT_NAME,
+        number_of_notes: Reminder::DEFAULT_NUMBER_OF_NOTES
+      })
     end
   end
 
-  describe 'when form values are changed but valid' do
+  describe 'when form is submitted with custom but valid values' do
     it 'reminder is created' do
       login
       visit_page
@@ -58,12 +56,10 @@ RSpec.describe 'Create reminder', type: :feature do
       submit_form
 
       expect(page).to have_text t('notices.reminders.created')
-      expect(Reminder.last.attributes.with_indifferent_access).to match(
-        hash_including({
-          name: 'My awesome reminder',
-          number_of_notes: 10
-        })
-      )
+      expect(Reminder.last).to have_attributes({
+        name: 'My awesome reminder',
+        number_of_notes: 10
+      })
     end
   end
 

@@ -1,0 +1,8 @@
+<%= simple_form_for(@reminder) do |f| %>
+  <%= f.error_notification %>
+
+  <%= f.input :name %>
+  <%= f.input :number_of_notes %>
+
+  <%= f.button :submit %>
+<% end %>

@@ -1,0 +1,17 @@
+<div class="container--small header-margin">
+  <div>
+    <%= render partial: 'shared/page_title', locals: { text: 'Reminders' } %>
+    <%= render partial: 'shared/new_item_link',
+      locals: { text: 'New reminder', path: new_reminder_path } %>
+  </div>
+
+
+  <% if @reminders.any? %>
+    <%= render @reminders %>
+  <% else %>
+    <p>You have no reminders.</p>
+
+    <%= link_to 'Create your first reminder', new_reminder_path,
+      class: 'btn btn-primary' %>
+  <% end %>
+</div>

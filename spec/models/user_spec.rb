@@ -11,7 +11,7 @@ RSpec.describe User, type: :model do
 
   describe 'associations' do
     it { is_expected.to have_many(:notes).dependent(:destroy) }
-    it { is_expected.to have_one(:reminder).dependent(:destroy) }
+    it { is_expected.to have_many(:reminders).dependent(:destroy) }
   end
 
   describe 'validations' do

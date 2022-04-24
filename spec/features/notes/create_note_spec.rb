@@ -9,8 +9,8 @@ RSpec.describe 'Create note', type: :feature do
     expect { visit new_note_path }.to require_authentication
   end
 
-  describe 'when form input is invalid' do
-    it 'validation errors are shown' do
+  describe 'when form submission is invalid' do
+    it 'validation errors are displayed' do
       login
       visit new_note_path
 
@@ -21,7 +21,7 @@ RSpec.describe 'Create note', type: :feature do
     end
   end
 
-  describe 'when form input is valid' do
+  describe 'when form submission is valid' do
     it 'note is created', :js do
       login
       visit new_note_path

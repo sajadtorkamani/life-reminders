@@ -1,5 +1,9 @@
 <div class="container--small header-margin">
-  <%= render partial: 'shared/page_title', locals: { text: 'Notes' } %>
+  <div>
+    <%= render partial: 'shared/page_title', locals: { text: 'Notes' } %>
+    <%= render partial: 'shared/new_item_link',
+      locals: { text: 'New note', path: new_note_path } %>
+  </div>
 
   <% if @notes.any? %>
     <%= render @notes %>

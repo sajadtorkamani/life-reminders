@@ -4,3 +4,7 @@ en:
       created: "Note created."
       updated: "Note updated."
       deleted: "Note deleted."
+    reminders:
+      created: "Reminder created."
+      updated: "Reminder updated."
+      deleted: "Reminder deleted."

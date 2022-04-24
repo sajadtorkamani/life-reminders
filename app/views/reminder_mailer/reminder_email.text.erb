@@ -1,0 +1,15 @@
+Hello <%= @user.email %>,
+
+Here are your reminders:
+
+<% # @formatter:off  %>
+<% @notes.each do |note| %>
+<%
+  content = note.content.to_plain_text
+  border = '-' * content.length
+%>
+<%= border %>
+<%= content %>
+<%= border %>
+<% end %>
+<% # @formatter:on  %>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+</head>
+<body>
+  <div style="max-width: 630px;">
+    <p>Hello <%= @user.email %>,</p>
+
+    <p>Here are your reminders:</p>
+
+    <% @notes.each do |note| %>
+      <div
+        style="
+        border: 1px solid #7e7e7e;
+          font-size: 20px;
+          margin-bottom: 20px;
+          padding: 10px;
+        ">
+        <%= note.content %>
+      </div>
+    <% end %>
+  </div>
+</body>
+</html>

@@ -6,5 +6,5 @@ Rails.application.routes.draw do
   devise_for :users
 
   resources :notes, except: :show
-  resources :reminders, only: %i[index new create edit update]
+  resources :reminders, except: :show
 end

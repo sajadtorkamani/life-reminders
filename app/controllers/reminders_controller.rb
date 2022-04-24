@@ -2,7 +2,7 @@
 
 class RemindersController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_reminder, only: %i[edit update]
+  before_action :set_reminder, only: %i[edit update destroy]
 
   # GET /reminders
   def index
@@ -40,6 +40,14 @@ class RemindersController < ApplicationController
     else
       render :edit, status: :unprocessable_entity
     end
+  end
+
+  # DELETE /reminders/:id
+  def destroy
+    authorize @reminder
+    @reminder.destroy!
+
+    redirect_to reminders_path, notice: t('notices.reminders.deleted'), status: :see_other
   end
 
   private

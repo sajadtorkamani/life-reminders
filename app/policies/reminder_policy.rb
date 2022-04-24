@@ -5,6 +5,10 @@ class ReminderPolicy < ApplicationPolicy
     owner?
   end
 
+  def destroy?
+    owner?
+  end
+
   class Scope < Scope
   end
 end

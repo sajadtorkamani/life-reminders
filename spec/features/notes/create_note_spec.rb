@@ -30,7 +30,7 @@ RSpec.describe 'Create note', type: :feature do
       submit_form
 
       expect(page).to have_current_path notes_path
-      expect(page).to have_text I18n.t('notices.notes.created')
+      expect(page).to have_text t('notices.notes.created')
     end
   end
 

@@ -8,7 +8,7 @@ RSpec.describe 'Login', type: :feature do
 
     visit_page
 
-    expect(page).to have_text I18n.t('devise.failure.already_authenticated')
+    expect(page).to have_text t('devise.failure.already_authenticated')
   end
 
   describe 'when invalid credentials are submitted' do
@@ -45,10 +45,10 @@ RSpec.describe 'Login', type: :feature do
   end
 
   def invalid_credentials_message
-    I18n.t('devise.failure.invalid')
+    t('devise.failure.invalid')
   end
 
   def login_success_message
-    I18n.t('devise.sessions.signed_in')
+    t('devise.sessions.signed_in')
   end
 end

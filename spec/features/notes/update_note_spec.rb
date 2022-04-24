@@ -32,7 +32,7 @@ RSpec.describe 'Update note', type: :feature do
       submit_form
 
       expect(page).to have_current_path notes_path
-      expect(page).to have_text I18n.t('notices.notes.updated')
+      expect(page).to have_text t('notices.notes.updated')
       expect(page).to have_text 'My new note'
     end
   end

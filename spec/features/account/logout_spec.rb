@@ -15,6 +15,6 @@ RSpec.describe 'Logout', type: :feature do
   end
 
   def logged_out_message
-    I18n.t('devise.sessions.signed_out')
+    t('devise.sessions.signed_out')
   end
 end

@@ -20,6 +20,6 @@ RSpec.describe 'Delete note', type: :feature do
     visit notes_path
 
     click_and_confirm 'Delete'
-    expect(page).to have_text I18n.t('notices.notes.deleted')
+    expect(page).to have_text t('notices.notes.deleted')
   end
 end

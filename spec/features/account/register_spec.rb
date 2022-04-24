@@ -8,7 +8,7 @@ RSpec.describe 'Registration', type: :feature do
 
     visit_page
 
-    expect(page).to have_text I18n.t('devise.failure.already_authenticated')
+    expect(page).to have_text t('devise.failure.already_authenticated')
   end
 
   describe 'when form submission is invalid' do
@@ -38,7 +38,7 @@ RSpec.describe 'Registration', type: :feature do
       fill_in 'Password confirmation', with: attributes[:password]
       submit_form
 
-      expect(page).to have_content I18n.t('devise.registrations.signed_up')
+      expect(page).to have_content t('devise.registrations.signed_up')
       expect(page).to have_text 'john'
     end
   end

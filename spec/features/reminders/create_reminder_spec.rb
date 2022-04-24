@@ -38,7 +38,7 @@ RSpec.describe 'Create reminder', type: :feature do
       submit_form
 
       expect(page).to have_current_path reminders_path
-      expect(page).to have_text I18n.t('notices.reminders.created')
+      expect(page).to have_text t('notices.reminders.created')
       expect(Reminder.last.attributes.with_indifferent_access).to match(
         hash_including({
           name: Reminder::DEFAULT_NAME,
@@ -57,7 +57,7 @@ RSpec.describe 'Create reminder', type: :feature do
       fill_in 'Number of notes', with: '10'
       submit_form
 
-      expect(page).to have_text I18n.t('notices.reminders.created')
+      expect(page).to have_text t('notices.reminders.created')
       expect(Reminder.last.attributes.with_indifferent_access).to match(
         hash_including({
           name: 'My awesome reminder',

@@ -4,7 +4,7 @@ require 'rails_helper'
 
 RSpec.describe 'Notes index page', type: :feature do
   it 'requires user to be authenticated' do
-    expect(notes_path).to require_authentication
+    expect { visit_page }.to require_authentication
   end
 
   describe 'when user has no notes' do

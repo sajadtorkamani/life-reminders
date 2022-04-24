@@ -5,7 +5,9 @@ require 'rails_helper'
 RSpec.describe 'Registration', type: :feature do
   it 'register page is only accessible to guests' do
     login
+
     visit_page
+
     expect(page).to have_text I18n.t('devise.failure.already_authenticated')
   end
 

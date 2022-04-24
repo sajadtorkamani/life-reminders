@@ -11,8 +11,8 @@ RSpec.describe 'Registration', type: :feature do
     expect(page).to have_text I18n.t('devise.failure.already_authenticated')
   end
 
-  describe 'when form input is invalid' do
-    it 'error messages are shown' do
+  describe 'when form submission is invalid' do
+    it 'validation errors are shown' do
       visit_page
 
       submit_form
@@ -28,7 +28,7 @@ RSpec.describe 'Registration', type: :feature do
     end
   end
 
-  describe 'when form input is valid' do
+  describe 'when form submission is valid' do
     it 'user is registered' do
       attributes = attributes_for(:user, email: 'john@example.com')
       visit_page

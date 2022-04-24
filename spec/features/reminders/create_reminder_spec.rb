@@ -10,7 +10,7 @@ RSpec.describe 'Create reminder', type: :feature do
   end
 
   describe 'when form submission is invalid' do
-    it 'validation errors are displayed' do
+    it 'validation errors are shown' do
       login
       visit_page
 

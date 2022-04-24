@@ -11,7 +11,7 @@ RSpec.describe 'Login', type: :feature do
     expect(page).to have_text I18n.t('devise.failure.already_authenticated')
   end
 
-  describe 'when credentials are invalid' do
+  describe 'when invalid credentials are submitted' do
     it 'error message is shown' do
       visit_page
 
@@ -21,7 +21,7 @@ RSpec.describe 'Login', type: :feature do
     end
   end
 
-  describe 'when credentials are valid' do
+  describe 'when valid credentials are submitted' do
     it 'user is logged in' do
       user = create(:user)
       visit_page

@@ -3,7 +3,7 @@
 require 'rails_helper'
 
 describe 'Home' do
-  it 'renders homepage when user is not logged in' do
+  it 'renders the home page when the user is not logged in' do
     visit root_path
 
     expect(page).to have_text 'Get started'
@@ -11,7 +11,7 @@ describe 'Home' do
     expect(page).to have_text 'Register'
   end
 
-  it 'redirects to notes index page when user is logged in' do
+  it 'redirects to the notes index page when user is logged in' do
     user = create(:user)
     login_as(user)
 

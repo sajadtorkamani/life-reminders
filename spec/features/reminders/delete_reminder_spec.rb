@@ -20,8 +20,8 @@ RSpec.describe 'Delete reminder', type: :feature do
 
     login_as(user)
     visit reminders_path
-
     click_and_confirm 'Delete'
+
     expect(page).to have_text t('notices.reminders.deleted')
     expect(page).to have_current_path reminders_path
     expect(user.reminders).to be_empty

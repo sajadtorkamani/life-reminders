@@ -22,7 +22,7 @@ RSpec.describe 'Update reminder', type: :feature do
       expect { visit edit_reminder_path(bob_reminder) }.to raise_unauthorized_error
     end
 
-    it "only the resource's owner can update the reminder", type: :request do
+    it "only the reminder's owner can update the reminder", type: :request do
       login_as(jim)
 
       expect { put reminder_path(bob_reminder) }.to raise_unauthorized_error

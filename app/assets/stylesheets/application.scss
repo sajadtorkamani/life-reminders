@@ -1,5 +1,5 @@
-@use '../../../vendor/stylesheets/bootstrap-5.1.3/bootstrap.scss';
 @use 'actiontext';
+@use 'bootstrap';
 
 .container--small {
   @extend .container;

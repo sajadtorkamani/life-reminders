@@ -1,0 +1,51 @@
+// scss-docs-start import-stack
+// Configuration
+@import "../../../vendor/stylesheets/bootstrap-5.1.3/functions";
+
+// Custom variable overrides
+// https://getbootstrap.com/docs/5.1/customize/sass/
+$enable-negative-margins: true;
+
+@import "../../../vendor/stylesheets/bootstrap-5.1.3/variables";
+@import "../../../vendor/stylesheets/bootstrap-5.1.3/mixins";
+@import "../../../vendor/stylesheets/bootstrap-5.1.3/utilities";
+
+// Layout & components
+@import "../../../vendor/stylesheets/bootstrap-5.1.3/root";
+@import "../../../vendor/stylesheets/bootstrap-5.1.3/reboot";
+@import "../../../vendor/stylesheets/bootstrap-5.1.3/type";
+@import "../../../vendor/stylesheets/bootstrap-5.1.3/images";
+@import "../../../vendor/stylesheets/bootstrap-5.1.3/containers";
+@import "../../../vendor/stylesheets/bootstrap-5.1.3/grid";
+@import "../../../vendor/stylesheets/bootstrap-5.1.3/tables";
+@import "../../../vendor/stylesheets/bootstrap-5.1.3/forms";
+@import "../../../vendor/stylesheets/bootstrap-5.1.3/buttons";
+@import "../../../vendor/stylesheets/bootstrap-5.1.3/transitions";
+@import "../../../vendor/stylesheets/bootstrap-5.1.3/dropdown";
+@import "../../../vendor/stylesheets/bootstrap-5.1.3/button-group";
+@import "../../../vendor/stylesheets/bootstrap-5.1.3/nav";
+@import "../../../vendor/stylesheets/bootstrap-5.1.3/navbar";
+@import "../../../vendor/stylesheets/bootstrap-5.1.3/card";
+@import "../../../vendor/stylesheets/bootstrap-5.1.3/accordion";
+@import "../../../vendor/stylesheets/bootstrap-5.1.3/breadcrumb";
+@import "../../../vendor/stylesheets/bootstrap-5.1.3/pagination";
+@import "../../../vendor/stylesheets/bootstrap-5.1.3/badge";
+@import "../../../vendor/stylesheets/bootstrap-5.1.3/alert";
+@import "../../../vendor/stylesheets/bootstrap-5.1.3/progress";
+@import "../../../vendor/stylesheets/bootstrap-5.1.3/list-group";
+@import "../../../vendor/stylesheets/bootstrap-5.1.3/close";
+@import "../../../vendor/stylesheets/bootstrap-5.1.3/toasts";
+@import "../../../vendor/stylesheets/bootstrap-5.1.3/modal";
+@import "../../../vendor/stylesheets/bootstrap-5.1.3/tooltip";
+@import "../../../vendor/stylesheets/bootstrap-5.1.3/popover";
+@import "../../../vendor/stylesheets/bootstrap-5.1.3/carousel";
+@import "../../../vendor/stylesheets/bootstrap-5.1.3/spinners";
+@import "../../../vendor/stylesheets/bootstrap-5.1.3/offcanvas";
+@import "../../../vendor/stylesheets/bootstrap-5.1.3/placeholders";
+
+// Helpers
+@import "../../../vendor/stylesheets/bootstrap-5.1.3/helpers";
+
+// Utilities
+@import "../../../vendor/stylesheets/bootstrap-5.1.3/utilities/api";
+// scss-docs-end import-stack

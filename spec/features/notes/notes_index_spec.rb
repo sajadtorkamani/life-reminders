@@ -3,8 +3,10 @@
 require 'rails_helper'
 
 RSpec.describe 'Notes index page', type: :feature do
-  it 'requires user to be authenticated' do
-    expect { visit_page }.to require_authentication
+  describe 'permissions' do
+    it 'requires user to be authenticated' do
+      expect { visit_page }.to require_authentication
+    end
   end
 
   describe 'when user has no notes' do

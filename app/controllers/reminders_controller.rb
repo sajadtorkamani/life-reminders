@@ -2,10 +2,11 @@
 
 class RemindersController < ApplicationController
   before_action :authenticate_user!
+  before_action :set_reminder, only: %i[edit update]
 
   # GET /reminders
   def index
-    @reminders = Reminder.where(user: current_user)
+    @reminders = Reminder.where(user: current_user).order(created_at: :desc)
   end
 
   # GET /reminders/new
@@ -25,7 +26,27 @@ class RemindersController < ApplicationController
     end
   end
 
+  # GET /reminder/:id/edit
+  def edit
+    authorize @reminder
+  end
+
+  # PUT /reminders/:id
+  def update
+    authorize @reminder
+
+    if @reminder.update(reminder_params)
+      redirect_to reminders_path, notice: t('notices.reminders.updated')
+    else
+      render :edit, status: :unprocessable_entity
+    end
+  end
+
   private
+
+  def set_reminder
+    @reminder = Reminder.find(params[:id])
+  end
 
   def reminder_params
     params.require(:reminder).permit(:name, :number_of_notes)

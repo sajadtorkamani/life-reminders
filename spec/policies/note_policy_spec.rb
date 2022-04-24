@@ -6,26 +6,26 @@ RSpec.describe NotePolicy, type: :policy do
   subject(:policy) { described_class }
 
   let(:user) { create(:user) }
-  let(:reminder) { create(:reminder) }
+  let(:note) { create(:note) }
 
   permissions :edit?, :update? do
     it 'denies permission if user is not the owner of the note' do
-      expect(policy).not_to permit(user, reminder)
+      expect(policy).not_to permit(user, note)
     end
 
     it 'grants permission if user is the owner of the note' do
-      note = create(:reminder, user:)
+      note = create(:note, user:)
       expect(policy).to permit(user, note)
     end
   end
 
   permissions :destroy? do
     it 'denies permission if user is not the owner of the note' do
-      expect(policy).not_to permit(user, reminder)
+      expect(policy).not_to permit(user, note)
     end
 
     it 'grants permission if user is the owner of the note' do
-      note = create(:reminder, user:)
+      note = create(:note, user:)
       expect(policy).to permit(user, note)
     end
   end

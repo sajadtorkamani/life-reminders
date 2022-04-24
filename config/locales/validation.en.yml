@@ -1,0 +1,4 @@
+en:
+  validation:
+    reminder:
+      number_of_notes: "Number of notes must be a number between 1 and 10"

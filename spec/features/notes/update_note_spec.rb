@@ -10,7 +10,7 @@ RSpec.describe 'Update note', type: :feature do
     expect { visit edit_note_path(note) }.to require_authentication
   end
 
-  describe 'when form input is invalid' do
+  describe 'when form submission is invalid' do
     it 'validation errors are shown', :js do
       login_as(user)
       visit edit_note_path(note)
@@ -23,7 +23,7 @@ RSpec.describe 'Update note', type: :feature do
     end
   end
 
-  describe 'when form input is valid' do
+  describe 'when form submission is valid' do
     it 'note is updated', :js do
       login_as(user)
       visit edit_note_path(note)

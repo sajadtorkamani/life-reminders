@@ -1,7 +1,10 @@
 <div class="card mb-4">
   <div class="card-body">
-    <div class="trix-content">
-      <%= reminder.name %>
-    </div>
+    <%= reminder.name %>
+  </div>
+
+  <div class="card-footer">
+    <%= link_to 'Edit', edit_reminder_path(reminder),
+      class: 'btn btn-sm btn-outline-primary me-1' %>
   </div>
 </div>

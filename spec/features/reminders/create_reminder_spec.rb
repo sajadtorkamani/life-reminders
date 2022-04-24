@@ -21,12 +21,12 @@ RSpec.describe 'Create reminder', type: :feature do
 
       expect(page).to have_text default_form_error_message
       expect(page).to have_text "Name can't be blank"
-      expect(page).to have_text 'Number of notes must be a number between 1 and 10'
+      expect(page).to have_text t('validation.reminder.number_of_notes')
 
       fill_in 'Number of notes', with: '0'
       submit_form
 
-      expect(page).to have_text 'Number of notes must be a number between 1 and 10'
+      expect(page).to have_text t('validation.reminder.number_of_notes')
     end
   end
 

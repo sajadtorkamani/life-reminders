@@ -7,6 +7,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :notes, dependent: :destroy
+  has_one :reminder, dependent: :destroy
 
   def truncated_email
     email.split('@').first.truncate(20)

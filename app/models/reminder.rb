@@ -19,4 +19,12 @@ class Reminder < ApplicationRecord
     end
     # rubocop:enable Style/IfUnlessModifier, Style/GuardClause
   end
+
+  def self.with_notes
+    joins(user: :notes).distinct
+  end
+
+  def notes
+    @notes ||= user.notes.take(number_of_notes)
+  end
 end

@@ -18,9 +18,9 @@ RSpec.describe Reminder, type: :model do
   end
 
   describe 'default attribute values' do
-    it "sets :name to 'Default reminder' by default" do
+    it "sets :name to 'Daily reminder' by default" do
       reminder = described_class.new
-      expect(reminder.name).to eq 'Default reminder'
+      expect(reminder.name).to eq 'Daily reminder'
     end
 
     it 'sets :number_of_notes to 3 by default' do

@@ -4,7 +4,7 @@ class Reminder < ApplicationRecord
   belongs_to :user
 
   DEFAULT_NUMBER_OF_NOTES = 3
-  DEFAULT_NAME = 'Default reminder'
+  DEFAULT_NAME = 'Daily reminder'
 
   attribute :name, :string, default: DEFAULT_NAME
   attribute :number_of_notes, :integer, default: DEFAULT_NUMBER_OF_NOTES

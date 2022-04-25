@@ -72,7 +72,7 @@ RSpec.describe Reminder, type: :model do
         reminder_2_with_notes = create(:reminder, :with_notes)
         _reminder_3_without_notes = create(:reminder, :without_notes)
 
-        expect(described_class.with_notes).to eq [
+        expect(described_class.with_notes).to match [
           reminder_1_with_notes,
           reminder_2_with_notes
         ]

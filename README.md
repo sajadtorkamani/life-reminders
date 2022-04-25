@@ -23,5 +23,6 @@ to automate installation of dependencies listen in the [`Brewfile`](Brewfile).
 - Run migrations:
   - `./bin/rails db:migrate`
 - Install and start Mailhog
+  - `mailhog`
 - Start dev server:
   - `./bin/dev`

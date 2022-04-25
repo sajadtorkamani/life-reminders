@@ -94,7 +94,7 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   # Custom
-  config.default_sender_email = ENV.fetch('DEFAULT_SENDER_EMAIl')
+  config.default_sender_email = ENV.fetch('DEFAULT_SENDER_EMAIL')
 
   config.action_mailer.default_url_options = { host: ENV.fetch('HOST') }
   config.action_mailer.delivery_method = :smtp

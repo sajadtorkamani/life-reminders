@@ -62,7 +62,7 @@ Rails.application.configure do
 
   # Custom configuration
   config.default_sender_email = ENV.fetch(
-    'DEFAULT_SENDER_EMAIl',
+    'DEFAULT_SENDER_EMAIL',
     'sajadtorkamani1+lifereminders@gmail.com'
   )
 end

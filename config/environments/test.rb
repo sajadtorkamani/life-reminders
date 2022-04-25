@@ -25,7 +25,7 @@ Rails.application.configure do
   }
 
   # Show full error reports and disable caching.
-  config.consider_all_requests_local       = true
+  config.consider_all_requests_local = true
   config.action_controller.perform_caching = false
   config.cache_store = :null_store
 
@@ -61,5 +61,8 @@ Rails.application.configure do
   # config.action_view.annotate_rendered_view_with_filenames = true
 
   # Custom configuration
-  config.from_email = 'lifereminders+sajadtorkamani1@gmail.com'
+  config.default_sender_email = ENV.fetch(
+    'DEFAULT_SENDER_EMAIl',
+    'sajadtorkamani1+lifereminders@gmail.com'
+  )
 end

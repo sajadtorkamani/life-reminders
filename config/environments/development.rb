@@ -73,8 +73,10 @@ Rails.application.configure do
   # config.action_cable.disable_request_forgery_protection = true
 
   # Custom configuration
-  config.from_email = 'lifereminders+sajadtorkamani1@gmail.com'
-
+  config.default_sender_email = ENV.fetch(
+    'DEFAULT_SENDER_EMAIl',
+    'sajadtorkamani1+lifereminders@gmail.com'
+  )
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = { address: '127.0.0.1', port: 1025 }
 end

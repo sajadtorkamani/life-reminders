@@ -26,3 +26,12 @@ to automate installation of dependencies listen in the [`Brewfile`](Brewfile).
   - `mailhog`
 - Start dev server:
   - `./bin/dev`
+
+### Deployment
+
+### Set environment variables
+
+| Name                   | Description                                                                                                   |
+|------------------------|---------------------------------------------------------------------------------------------------------------|
+| `HOST`                 | Domain where app is hosted.                                                                                   |
+| `DEFAULT_SENDER_EMAIL` | The email to be used as the sender for any outgoing emails. Referenced in `app/mailers/application_mailer.rb` |

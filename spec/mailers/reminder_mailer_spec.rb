@@ -9,7 +9,7 @@ RSpec.describe ReminderMailer, type: :mailer do
 
       email = described_class.with(reminder:).reminder_email
 
-      expect(email.from).to eq [Rails.configuration.from_email]
+      expect(email.from).to eq [Rails.configuration.default_sender_email]
       expect(email.to).to eq [reminder.user.email]
       expect(email.subject).to eq reminder.name
 

@@ -23,7 +23,7 @@ RSpec.describe 'Reminders index page', type: :feature do
   describe 'when user has reminders' do
     let(:user) { create(:user) }
 
-    it 'lists the reminders, with the most recently created at the top' do
+    it 'lists the reminders, with the most recently created appearing first' do
       user = create(:user)
       newest_reminder = create(:reminder, created_at: 1.minute.ago, user:, name: 'Newest reminder')
       older_reminder = create(:reminder, created_at: 2.minutes.ago, user:, name: 'Older reminder')

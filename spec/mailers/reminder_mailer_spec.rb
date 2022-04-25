@@ -4,7 +4,7 @@ require 'rails_helper'
 
 RSpec.describe ReminderMailer, type: :mailer do
   describe 'reminder_email' do
-    it 'creates the correct email' do
+    it 'builds the correct email content' do
       reminder = create(:reminder, :with_notes)
 
       email = described_class.with(reminder:).reminder_email

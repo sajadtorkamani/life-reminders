@@ -21,7 +21,7 @@ RSpec.describe 'Notes index page', type: :feature do
   end
 
   describe 'when user has notes' do
-    it 'lists the notes, with the most recently created at the top' do
+    it 'lists the notes, with the most recently created appearing first' do
       user = create(:user)
       old_note = create(:note, created_at: 2.minutes.ago, user:)
       new_note = create(:note, created_at: 1.minute.ago, user:)

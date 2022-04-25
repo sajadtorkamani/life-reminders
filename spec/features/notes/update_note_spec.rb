@@ -6,8 +6,10 @@ RSpec.describe 'Update note', type: :feature do
   let(:user) { create(:user) }
   let(:note) { create(:note, user:) }
 
-  it 'edit page requires user to be authenticated' do
-    expect { visit edit_note_path(note) }.to require_authentication
+  describe 'permissions' do
+    it 'edit page requires user to be authenticated' do
+      expect { visit edit_note_path(note) }.to require_authentication
+    end
   end
 
   describe 'when form submission is invalid' do

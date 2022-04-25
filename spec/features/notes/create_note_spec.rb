@@ -5,8 +5,10 @@ require 'rails_helper'
 RSpec.describe 'Create note', type: :feature do
   let(:user) { create(:user) }
 
-  it 'requires user to be authenticated' do
-    expect { visit new_note_path }.to require_authentication
+  describe 'permissions' do
+    it 'requires user to be authenticated' do
+      expect { visit new_note_path }.to require_authentication
+    end
   end
 
   describe 'when form submission is invalid' do
@@ -31,6 +33,7 @@ RSpec.describe 'Create note', type: :feature do
 
       expect(page).to have_current_path notes_path
       expect(page).to have_text t('notices.notes.created')
+      expect(Note.last.content.to_plain_text).to eq 'We all die.'
     end
   end
 

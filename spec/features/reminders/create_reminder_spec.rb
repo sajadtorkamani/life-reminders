@@ -5,8 +5,10 @@ require 'rails_helper'
 RSpec.describe 'Create reminder', type: :feature do
   let(:user) { create(:user) }
 
-  it 'requires user to be authenticated' do
-    expect { visit_page }.to require_authentication
+  describe 'permissions' do
+    it 'requires user to be authenticated' do
+      expect { visit_page }.to require_authentication
+    end
   end
 
   describe 'when form submission is invalid' do

@@ -2,7 +2,7 @@
 
 ## Local setup
 
-##### System requirements
+### System requirements
 
 - [Ruby 3.1.1](https://www.ruby-lang.org)
 - [Postgres 14](https://www.postgresql.org/)
@@ -22,5 +22,6 @@ to automate installation of dependencies listen in the [`Brewfile`](Brewfile).
   - `./bin/rails db:create`
 - Run migrations:
   - `./bin/rails db:migrate`
+- Install and start Mailhog
 - Start dev server:
   - `./bin/dev`

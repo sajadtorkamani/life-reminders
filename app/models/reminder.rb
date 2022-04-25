@@ -13,11 +13,11 @@ class Reminder < ApplicationRecord
   validate :number_of_notes, :validate_number_of_notes
 
   def validate_number_of_notes
-    # rubocop:disable Style/IfUnlessModifier, Style/GuardClause
+    # rubocop:disable Style/GuardClause
     unless number_of_notes in 1..10
       errors.add(:number_of_notes, 'must be a number between 1 and 10')
     end
-    # rubocop:enable Style/IfUnlessModifier, Style/GuardClause
+    # rubocop:enable Style/GuardClause
   end
 
   def self.with_notes

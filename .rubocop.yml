@@ -55,12 +55,15 @@ RSpec/RepeatedExample:
   Exclude:
     - spec/policies/**/
 
+Style/BlockDelimiters:
+  Exclude:
+    - spec/**/*
+
 Style/ClassAndModuleChildren:
   Enabled: false
 
 Style/Documentation:
   Enabled: false
 
-Style/BlockDelimiters:
-  Exclude:
-    - spec/**/*
+Style/IfUnlessModifier:
+  Enabled: false

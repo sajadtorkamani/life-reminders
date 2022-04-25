@@ -9,6 +9,12 @@ class SendRemindersJob < ApplicationJob
   def perform
     Reminder.with_notes.each do |reminder|
       ReminderMailer.with(reminder:).reminder_email.deliver_now
+
+      # rubocop:disable Rails/Output
+      if Rails.env.development?
+        puts "Sent \"#{reminder.name}\" to #{reminder.user.email}"
+      end
+      # rubocop:enable Rails/Output
     end
   end
 end

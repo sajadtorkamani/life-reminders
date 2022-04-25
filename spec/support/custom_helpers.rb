@@ -15,3 +15,7 @@ end
 def click_and_confirm(text)
   accept_confirm { click_on(text) }
 end
+
+def sent_emails
+  ActionMailer::Base.deliveries
+end

@@ -3,5 +3,21 @@
 require 'rails_helper'
 
 RSpec.describe ReminderMailer, type: :mailer do
-  pending "add some examples to (or delete) #{__FILE__}"
+  describe 'reminder_email' do
+    it 'creates the correct email' do
+      reminder = create(:reminder, :with_notes)
+
+      email = described_class.with(reminder:).reminder_email
+
+      expect(email.from).to eq [Rails.configuration.from_email]
+      expect(email.to).to eq [reminder.user.email]
+      expect(email.subject).to eq reminder.name
+
+      [email.html_part.body, email.text_part.body].each do |email_body|
+        reminder.notes.each do |note|
+          expect(email_body).to include note.content.to_plain_text
+        end
+      end
+    end
+  end
 end

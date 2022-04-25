@@ -16,7 +16,7 @@ RSpec.describe SendRemindersJob, type: :job do
     expect(emails_sent.map(&:subject)).to eq [jim_reminder.name]
   end
 
-  it "doesn't send a reminder email to users who have reminders configured but have not notes" do
+  it "doesn't send a reminder email to users who have reminders configured but have no notes" do
     jim = create(:user)
     jim_reminder = create(:reminder, :with_notes, user: jim)
     bob = create(:user)

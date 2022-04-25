@@ -74,4 +74,17 @@ Rails.application.configure do
 
   # Custom configuration
   config.from_email = 'lifereminders+sajadtorkamani1@gmail.com'
+
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    address: 'smtp.gmail.com',
+    port: 587,
+    domain: 'example.com',
+    user_name: 'st120793@gmail.com',
+    password: Rails.application.credentials.smtp!.development!.password!,
+    authentication: 'plain',
+    enable_starttls_auto: true,
+    open_timeout: 5,
+    read_timeout: 5
+  }
 end

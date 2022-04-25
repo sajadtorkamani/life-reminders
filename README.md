@@ -1,22 +1,26 @@
-# README
+# Docs
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Local setup
 
-Things you may want to cover:
+##### System requirements
 
-* Ruby version
+- [Ruby 3.1.1](https://www.ruby-lang.org)
+- [Postgres 14](https://www.postgresql.org/)
+- [MailHog](https://github.com/mailhog/MailHog)
 
-* System dependencies
+If using macOS, consider
+running [`brew bundle`](https://github.com/Homebrew/homebrew-bundle)
+to automate installation of dependencies listen in the [`Brewfile`](Brewfile).
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
+- Create `config/master.key` and paste the key from LastPass.
+- Install gems:
+  - `./bin/bundle install`
+- Ensure Postgres is installed and running.
+  - `brew services start postgresql`
+  - Ensure you can connect to postgres as your OS user (e.g., `sajad`).
+- Create database:
+  - `./bin/rails db:create`
+- Run migrations:
+  - `./bin/rails db:migrate`
+- Start dev server:
+  - `./bin/dev`

@@ -4,7 +4,7 @@ class ReminderMailer < ApplicationMailer
   def reminder_email
     @reminder = params[:reminder]
     @user = @reminder.user
-    @notes = @user.notes
+    @notes = @reminder.notes
 
     mail(to: @reminder.user.email, subject: @reminder.name)
   end

@@ -49,8 +49,9 @@ RSpec.describe Reminder, type: :model do
   end
 
   describe '.notes' do
+    let(:user) { create(:user) }
+
     it 'returns x number of notes, where x is the :number_of_notes attribute' do
-      user = create(:user)
       create_list(:note, 4, user:)
       reminder = create(:reminder, number_of_notes: 2, user:)
 
@@ -58,7 +59,6 @@ RSpec.describe Reminder, type: :model do
     end
 
     it 'returns no notes if the user has no notes' do
-      user = create(:user)
       reminder = create(:reminder, number_of_notes: 3, user:)
 
       expect(reminder.notes.count).to eq 0
@@ -67,7 +67,7 @@ RSpec.describe Reminder, type: :model do
 
   describe 'scopes' do
     describe '.with_notes' do
-      it 'returns only reminders where the associated user has at least one note' do
+      it 'only returns the reminders where the user has at least one note' do
         reminder_1_with_notes = create(:reminder, :with_notes)
         reminder_2_with_notes = create(:reminder, :with_notes)
         _reminder_3_without_notes = create(:reminder, :without_notes)

@@ -70,7 +70,13 @@ Run all RSpec tests in the `spec/` directory.
 
 ### Deployment
 
+URL: App is hoted at 
+[life-reminders.herokuapp.com](https://life-reminders.herokuapp.com/)
+
 #### Ensure environment variables are set
+
+If a change has introduced a dependency on an environment variable, ensure 
+that variable is listed in the table below and is configured in Heroku.
 
 | Name                   | Description                                                  |
 |------------------------|--------------------------------------------------------------|
@@ -78,6 +84,8 @@ Run all RSpec tests in the `spec/` directory.
 | `DEFAULT_SENDER_EMAIL` | The email to be used as the sender for any outgoing emails.  |
 
 #### Push to Heroku
+
+Pushing to `heroku master` will trigger deployment on Heroku.
 
 ```bash
 git push heroku master
@@ -88,3 +96,6 @@ git push heroku master
 ```bash
 heroku run rake db:migrate
 ```
+
+### Smoke test
+Play around with [app](https://life-reminders.herokuapp.com/) to ensure nothing is broken.

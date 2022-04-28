@@ -25,6 +25,6 @@ class Reminder < ApplicationRecord
   end
 
   def notes
-    @notes ||= user.notes.take(number_of_notes)
+    @notes ||= user.notes.sample(number_of_notes)
   end
 end

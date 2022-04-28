@@ -2,12 +2,21 @@
 
 module CustomHelpers
   module Capybara
-    def fill_in_trix_editor(id, with:)
-      find(:css, "##{id}").click.set(with)
+    def login
+      user = create(:user)
+      login_as(user)
     end
 
     def click_and_confirm(text)
       accept_confirm { click_on(text) }
+    end
+
+    def fill_in_trix_editor(id, with:)
+      find(:css, "##{id}").click.set(with)
+    end
+
+    def pause
+      sleep(100_000)
     end
   end
 
@@ -29,7 +38,8 @@ module CustomHelpers
 end
 
 RSpec.configure do |config|
-  config.include CustomHelpers::Messages
-  config.include CustomHelpers::Capybara
-  config.include CustomHelpers::ActionMailer
+  config.include CustomHelpers::Messages, type: :feature
+  config.include CustomHelpers::Capybara, type: :feature
+  config.include CustomHelpers::ActionMailer, type: :feature
+  config.include CustomHelpers::ActionMailer, type: :job
 end

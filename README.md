@@ -68,6 +68,10 @@ Start all the processes needed for development. See `Procfile.dev` for details.
 
 Run all RSpec tests in the `spec/` directory.
 
+#### `bin/mailhog`
+
+Opens the MailHog UI at [http://localhost:8025](http://localhost:8025). 
+
 ### Deployment
 
 URL: App is hoted at 

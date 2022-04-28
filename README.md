@@ -60,16 +60,31 @@ mailhog
 
 ### Available scripts
 
-```bin/test```
+#### `bin/dev`
+
+Start all the processes needed for development. See `Procfile.dev` for details.
+
+#### `bin/test`
 
 Run all RSpec tests in the `spec/` directory.
 
-
 ### Deployment
 
-### Set environment variables
+#### Ensure environment variables are set
 
 | Name                   | Description                                                  |
 |------------------------|--------------------------------------------------------------|
 | `HOST`                 | Domain where app is hosted.                                  |
 | `DEFAULT_SENDER_EMAIL` | The email to be used as the sender for any outgoing emails.  |
+
+#### Push to Heroku
+
+```bash
+git push heroku master
+```
+
+#### Run migrations
+
+```bash
+heroku run rake db:migrate
+```

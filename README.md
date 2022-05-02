@@ -74,7 +74,7 @@ Opens the MailHog UI at [http://localhost:8025](http://localhost:8025).
 
 ### Deployment
 
-URL: App is hoted at 
+URL: App is hosted at 
 [life-reminders.herokuapp.com](https://life-reminders.herokuapp.com/)
 
 #### Ensure environment variables are set

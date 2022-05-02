@@ -23,8 +23,7 @@ RSpec.describe SendRemindersJob, type: :job do
 
     described_class.perform_now
 
-    emails_sent = ActionMailer::Base.deliveries
-    expect(emails_sent.map(&:to).flatten).to eq [jim.email]
-    expect(emails_sent.map(&:subject)).to eq [jim_reminder.name]
+    expect(sent_emails.map(&:to).flatten).to eq [jim.email]
+    expect(sent_emails.map(&:subject)).to eq [jim_reminder.name]
   end
 end

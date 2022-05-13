@@ -74,8 +74,8 @@ Opens the MailHog UI at [http://localhost:8025](http://localhost:8025).
 
 ### Deployment
 
-URL: App is hosted at 
-[life-reminders.herokuapp.com](https://life-reminders.herokuapp.com/)
+Previously hosted at 
+[life-reminders.herokuapp.com](https://life-reminders.herokuapp.com/) but need to migrate.
 
 #### Ensure environment variables are set
 
@@ -102,4 +102,4 @@ heroku run rake db:migrate
 ```
 
 ### Smoke test
-Play around with [app](https://life-reminders.herokuapp.com/) to ensure nothing is broken.
+Play around with app to ensure nothing is broken.

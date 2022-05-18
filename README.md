@@ -10,7 +10,7 @@
 
 If using macOS, consider
 running [`brew bundle`](https://github.com/Homebrew/homebrew-bundle)
-to automate installation of dependencies listen in the [`Brewfile`](Brewfile).
+to automate installation of dependencies listed in the [`Brewfile`](Brewfile).
 
 #### Create `config/master.key`
 
